@@ -1,0 +1,13 @@
+.downloadLink {
+    background-color: #0D0D0D;
+    
+    border: 1px solid #404040;
+    border-radius: 5px;
+
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+}
