@@ -1,36 +1,37 @@
 {
-    "name": "Coub Downloader",
-    "version": "0.2.0",
-    "description": "Скачивалка коубов. Кривая, косая, но зато моя))",
-    "manifest_version": 2,
-
-    "background": {
-        "scripts": ["background.js"],
-        "persistent": false
-    },
-
-    "permissions": ["declarativeContent", "storage", "activeTab"],
-    
-    "page_action": {
-        "default_popup": "popup/popup.html",
-        "default_icon": {
-          "16": "images/coub_icon_16.png",
-          "32": "images/coub_icon_32.png",
-          "48": "images/coub_icon_48.png",
-          "128": "images/coub_icon_128.png"
-        }
-    },
-
-    "icons": {
-        "16": "images/coub_icon_16.png",
-        "32": "images/coub_icon_32.png",
-        "48": "images/coub_icon_48.png",
-        "128": "images/coub_icon_128.png"
-    },
-
-    "options_page": "options/options.html",
-
-    "content_scripts": [{
+  "name": "Pegasus",
+  "version": "0.2.1",
+  "description": "Coub Downloader. Скачивалка коубов. Кривая, косая, но зато моя))",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "permissions": [
+    "declarativeContent",
+    "storage",
+    "activeTab"
+  ],
+  "page_action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "images/coub_icon_16.png",
+      "32": "images/coub_icon_32.png",
+      "48": "images/coub_icon_48.png",
+      "128": "images/coub_icon_128.png"
+    }
+  },
+  "icons": {
+    "16": "images/coub_icon_16.png",
+    "32": "images/coub_icon_32.png",
+    "48": "images/coub_icon_48.png",
+    "128": "images/coub_icon_128.png"
+  },
+  "options_page": "options/options.html",
+  "content_scripts": [
+    {
       "matches": [
         "*://coub.com/*"
       ],
@@ -40,5 +41,6 @@
       "css": [
         "coub_styles.css"
       ]
-    }]
+    }
+  ]
 }
