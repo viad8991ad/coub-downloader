@@ -1,7 +1,7 @@
 {
     "name": "Coub Downloader",
-    "version": "0.1.0",
-    "description": "Скачивалка",
+    "version": "0.2.0",
+    "description": "Скачивалка коубов. Кривая, косая, но зато моя))",
     "manifest_version": 2,
 
     "background": {
@@ -31,11 +31,14 @@
     "options_page": "options/options.html",
 
     "content_scripts": [{
-		"matches": ["*://coub.com/view/*"],
-		"js": ["coub_inject.js"],
-		"css": ["coub_styles.css"]
-    },{
-        "matches": ["*://coub.com/"],
-		"js": ["coubs_inject.js"]
+      "matches": [
+        "*://coub.com/*"
+      ],
+      "js": [
+        "coub_inject.js"
+      ],
+      "css": [
+        "coub_styles.css"
+      ]
     }]
 }
