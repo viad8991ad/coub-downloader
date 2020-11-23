@@ -128,7 +128,12 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
+#PyCharm
 .idea
 
+# files
 *.mp3
 *.mp4
+
+# linux
+.directory
