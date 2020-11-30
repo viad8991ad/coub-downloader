@@ -20,6 +20,7 @@ python3 main.py
 1. error with 18+ content
 1. update css style button (click)
 1. port in settings
+1. error with '/' in name
 
 ### TODO (alltime)
 1. code cleanup
