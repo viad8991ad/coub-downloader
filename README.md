@@ -18,9 +18,9 @@ python3 main.py
 
 ## TODO
 1. error with 18+ content
-1. update css style button (click)
+1. update css style button (click) and popup
 1. port in settings
-1. error with '/' in name
+1. error with '{{next symbol}}' in name (fixed: /)
 
 ### TODO (alltime)
 1. code cleanup

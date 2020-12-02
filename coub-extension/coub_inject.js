@@ -72,12 +72,12 @@
                 videoUrl = json.file_versions.html5.video.high.url
             }
 
-            let coubName = descriptionBody.querySelector("h5.description__title").innerText
+            let coubName = descriptionBody.querySelector("h5.description__title").innerText.replaceAll("/", "|")
             console.log("PEGAS_COUB_DOWNLOADER: create download button for coub name " + coubName)
 
             let descriptionControls = rows.querySelector("div.description__controls");
             let button = document.createElement("button");
-            button.innerHTML = "full / hd";
+            button.innerText = "full / hd";
             button.className = "pegas_download_link";
             button.onclick = function () {
                 let xhr = new XMLHttpRequest();
@@ -88,6 +88,18 @@
                     video: videoUrl,
                     audio: audioUrl
                 }));
+
+                let divPopupBackground = document.createElement("div");
+                divPopupBackground.className = "pegas_popup";
+                divPopupBackground.innerText = "Скачивание началось";
+
+                xhr.onerror = function () {
+                    divPopupBackground.innerText = "Ошибка скачивания";
+                };
+                document.querySelector("header.header").appendChild(divPopupBackground);
+                setTimeout(function () {
+                    divPopupBackground.remove();
+                }, 2000);
             };
             descriptionControls.appendChild(button);
         }
