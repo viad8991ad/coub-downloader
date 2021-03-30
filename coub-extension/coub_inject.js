@@ -62,7 +62,14 @@
             let jsonString = rows.querySelector("div.data").querySelector("script").innerHTML;
             let json = JSON.parse(jsonString)
 
-            let audioUrl = json.file_versions.html5.audio.high.url
+            let audioUrl;
+            let audioUrlHalf = json.file_versions.html5
+            if (audioUrlHalf.hasOwnProperty("audio")) {
+                audioUrl = json.file_versions.html5.audio.high.url
+            } else {
+                console.error("PEGAS_COUB_DOWNLOADER: download button not create")
+                return;
+            }
 
             let videoUrl;
             let videoUrlHalf = json.file_versions.html5.video
@@ -73,7 +80,7 @@
             }
 
             let coubName = descriptionBody.querySelector("h5.description__title").innerText.replaceAll("/", "|")
-            console.log("PEGAS_COUB_DOWNLOADER: create download button for coub name " + coubName)
+            console.log("PEGAS_COUB_DOWNLOADER: create download button for coub name '" + coubName + "'")
 
             let descriptionControls = rows.querySelector("div.description__controls");
             let button = document.createElement("button");
